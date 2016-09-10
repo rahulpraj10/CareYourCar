@@ -1,0 +1,23 @@
+
+<ion-navbar *navbar>
+  <ion-title>
+    TEST GEO and CAM
+  </ion-title>
+</ion-navbar>
+
+<ion-content>
+ <div id="map"></div> 
+ <button dark outline block medium (click)="OpenCamera()">OPEN CAMERA<ion-icon name="camera"></ion-icon></button>
+  <ion-card id="previewId">
+      <img src="img/Honda.jpg" [ngClass]="{'display-none': displayValue }"/>
+      <img [src]="base64Image" [ngClass]="{'display-none': !displayValue }" />
+  </ion-card>
+  <ion-card id="previewId" [ngClass]="{'pos2': _pos2,'pos3':!_pos3 }" (click)="ChangePos()">
+      <img src="img/Honda.jpg" [ngClass]="{'display-none': displayValue }"/>
+      <img [src]="base64Image" [ngClass]="{'display-none': !displayValue }" />
+  </ion-card>
+  <ion-card id="previewId" [ngClass]="{'pos3':_pos3,'pos2':!_pos2}" (click)="ChangePos()">
+      <img src="img/Honda.jpg" [ngClass]="{'display-none': displayValue }"/>
+      <img [src]="base64Image" [ngClass]="{'display-none': !displayValue }" />
+  </ion-card>  
+</ion-content>

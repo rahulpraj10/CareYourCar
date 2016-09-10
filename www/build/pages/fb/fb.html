@@ -1,0 +1,61 @@
+<!--
+  Generated template for the FbPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+   <ion-buttons end>
+    <button item-right (click)="GoHome()"><ion-icon name="logo-windows"></ion-icon></button>
+   </ion-buttons> 
+    <ion-title>FB SERVICE CENTER LIST</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding class="fb">
+<ion-row>
+ <ion-col style="transition:visibility .1s .9s;" [ngClass]="{'displayLoading':isLoadingClassVisible}">
+ <div>
+  <br/><br/><p>We are unable to find your location.. <br/><br/><i><ion-icon name="logo-freebsd-devil"></ion-icon></i></p><br/><p style="font-size:15px;"><b>Pls turn on your GPS or move to an Open space</b></p><br/><br/><button full (click)="showRefine()">Offline Service<ion-icon name="md-navigate"></ion-icon></button>
+  </div>
+  </ion-col>
+ </ion-row>  
+<ion-row style="height:0px;">
+ <ion-col style="transition:transform 1s;transform:translate(0,-2000px)" [ngClass]="{'displayMap':isLoadingClassVisible}">
+  <div> 
+  <div id="map"></div>  
+  <button full (click)="showRefine()">Near By Service<ion-icon name="md-navigate"></ion-icon></button>
+  </div>  
+ </ion-col>
+</ion-row>
+			    <div [ngClass]="{'refineClass':isrefineClass}"> 
+			     <p style="text-align:center">RANGE <i>(KiloMeteres)</i></p>
+			      <ion-row>
+			      <ion-col width-80>
+			      <ion-range [(ngModel)]="kmrange" min="0" max="100" pin="true" style="padding:0px 0px 0px 15px">
+				      <ion-icon range-left small name="pin"></ion-icon>
+				      <ion-icon range-right name="pin"></ion-icon>
+			      </ion-range>
+			      </ion-col>
+			      <ion-col>
+			        <button full ><ion-icon name="ios-funnel-outline"></ion-icon></button>
+			      </ion-col>
+			      </ion-row>
+			     </div> 
+  <ion-list>
+    <ion-item *ngFor="let ServiceCenter of centerList_1">
+      <ion-thumbnail item-left (click)="ShowInMap(ServiceCenter[3],ServiceCenter[4])">
+        <img src={{ServiceCenter[1]}}>
+      </ion-thumbnail>
+      <h2>{{ServiceCenter[0]}}</h2>
+      <h4>{{ServiceCenter[2]}} • <ion-icon name="ios-star-half"></ion-icon></h4>
+      <button clear item-right (click)="gotoServiceCenter(ServiceCenter[0],ServiceCenter[2],ServiceCenter[1])">View</button>
+    </ion-item>
+   </ion-list>
+
+
+</ion-content>

@@ -1,0 +1,108 @@
+<!--
+  Generated template for the ServicecenterDetailPagePage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-navbar *navbar>
+  <ion-title>SERVICE CENTER DETAILS</ion-title>
+</ion-navbar>
+
+<ion-content no-padding class="servicecenter-detail-page">
+  
+  <ion-card>
+
+    <img src="img/{{imgName}}"/>
+
+    <ion-card-content>
+      <p class="card-title Heading">
+        <b><i>{{name}}<ion-icon name='ios-car' style="position:absolute;right:25px"></ion-icon></i></b>
+      </p>
+      <p>
+        The most popular vehicle service center <b>{{name}} - {{loc}}</b>, is always at your service ..
+      </p>
+    </ion-card-content>
+
+    <ion-row no-padding>
+      <ion-col width-33>
+        <button clear small danger (click)="GotoSlide(1)">
+          <ion-icon name='ios-bookmark'></ion-icon>
+          Book It
+        </button>
+      </ion-col>
+      <ion-col text-center width-33>
+        <button clear small danger (click)="GotoSlide(2)">
+          <ion-icon name='md-construct'></ion-icon>
+          Quick Go
+        </button>
+      </ion-col>
+      <ion-col text-right width-33>
+        <button clear small danger (click)="GotoSlide(3)">
+          <ion-icon name='logo-euro'></ion-icon>
+          Rate
+        </button>
+      </ion-col>
+    </ion-row>
+
+  
+  <ion-slides pager #mySlider [options]="mySlideOptions">
+
+      <ion-slide style="height:330px;display:block;">
+            
+       <h2 Heading>BOOK SERVICE</h2>
+	     
+      </ion-slide>
+
+      <ion-slide style="height:330px;display:block;">
+	      <ion-card-header style="padding:0px;">
+		<b>QUICK SERVICE</b>
+	      </ion-card-header>
+		  <ion-list no-border>
+
+		      <ion-list-header>
+			<button full (click)="Submit()">Get Service<ion-icon name="md-fastforward"></ion-icon></button>
+		      </ion-list-header>
+
+		      <ion-item style="font-size: 13px;height:58px;" >
+			<ion-icon name='planet' item-left></ion-icon>
+			<ion-label>CHOOSE SERVICE</ion-label>
+			  <ion-select [(ngModel)]="ServiceType" item-right>
+				<ion-option value="Engine">Engine</ion-option>
+				<ion-option value="Tyre">Tyre</ion-option>
+				<ion-option value="Starting">Starting</ion-option>
+				<ion-option value="Others">Others</ion-option>
+			  </ion-select>
+		      </ion-item>
+		      <ion-item style="font-size: 13px;height: 75px;;">
+			<ion-icon name='leaf' item-left></ion-icon>
+			<ion-label style="margin: 13px 8px 5px 0">SEVERITY</ion-label>
+			      <ion-range [(ngModel)]="severity" min="0" max="200" pin="true" no-padding style="padding:0px">
+				      <ion-icon range-left small name="sunny"></ion-icon>
+				      <ion-icon range-right name="sunny"></ion-icon>
+			      </ion-range>
+		      </ion-item>
+		      <ion-item style="font-size: 13px;height:58px;">
+			<ion-toggle checked="true"></ion-toggle>
+			<ion-label>
+			  CALL NOW
+			</ion-label>
+			<ion-icon name='body' item-left></ion-icon>
+		      </ion-item>
+
+
+		  </ion-list>
+      </ion-slide>
+
+      <ion-slide style="height:330px;display:block;">
+	<h2 Heading>SERVICE RATES</h2>
+  </ion-slide>
+
+  </ion-slides>
+  </ion-card>
+</ion-content>
+<style>
+.Heading{
+text-transform: uppercase;
+font-size:17px !important;
+}
+</style>

@@ -1,0 +1,31 @@
+<ion-header>
+</ion-header>
+
+<ion-content @flyInleft11="cloudState" class="windows">
+  <ion-row>
+    <ion-col style="z-index: 100;" width-75 @flyInleft1="cloudState"><div  class="large" ><ion-icon name="md-bicycle"></ion-icon></div></ion-col>
+    <ion-col @flyInleft2="cloudState"><div class="small"><ion-icon name="logo-apple"></ion-icon></div></ion-col>   
+</ion-row>
+  <ion-row baseline>
+    <ion-col @flyInleft3="cloudState"><div class="class2-2"><ion-icon name="appstore"></ion-icon></div></ion-col>
+    <ion-col @flyInleft4="cloudState"><div class="class2-2"><ion-icon name="cloudy"></ion-icon></div></ion-col>
+</ion-row>
+  <ion-row>
+    <ion-col @flyInleft5="cloudState"><div class="vsmall"><ion-icon name="cog"></ion-icon></div></ion-col>
+    <ion-col @flyInleft6="cloudState"><div class="vsmall"><ion-icon name="logo-windows"></ion-icon></div></ion-col>
+    <ion-col @flyInleft7="cloudState" width-50><div class="medium"><ion-icon name="jet"></ion-icon></div></ion-col>
+</ion-row>
+  <ion-row class="no-row">
+    <ion-col  @flyInleft12="cloudState" width-25><div class="vsmall"><ion-icon name="disc"></ion-icon></div></ion-col>
+    <ion-col  @flyInleft12="cloudState" width-25 (click)="goToFb()"><div class="vsmall"><ion-icon name="logo-facebook"></ion-icon></div></ion-col>    
+</ion-row>
+ <ion-row>
+    <ion-col (click)="tab1()" style="z-index: 100;" width-75 @flyInleft10="cloudState"><div  class="large" > <ion-icon name="game-controller-b"></ion-icon></div></ion-col>
+</ion-row>
+  <ion-row @flyInleft8="cloudState" class="no-row2">
+    <ion-col  width-25 offset-75><div class="vsmall"><ion-icon name="folder-open"></ion-icon></div></ion-col>
+ </ion-row>
+ <ion-row @flyInleft9="cloudState" class="no-row2">
+    <ion-col  width-25 offset-75 (click)="logOut()"><div class="vsmall"><ion-icon name="finger-print"></ion-icon></div></ion-col>
+ </ion-row>
+</ion-content>

@@ -1,0 +1,39 @@
+<ion-navbar *navbar>
+  <ion-title>YOUR {{vehicleName}} IN MAP</ion-title>
+</ion-navbar>
+
+<ion-content no-padding class="map">
+<ion-card style="height:60%;">
+  <div style= "height:100%;background-color: white;transition:height .5s" [ngClass]="{'displayLoading': isLoadingClassVisible }"><p style="position: absolute; padding: 80px;">We are unable to find your location.. <ion-icon name="logo-freebsd-devil" style="font-size:25px;"></ion-icon>  </p><p style="position: absolute; padding: 140px 80px;">Pls turn on your GPS or move to an Open space</p><p style="position: absolute; padding: 220px 40%;font-size:40px;"> <ion-icon name="ios-locate-outline"></ion-icon></p><button full (click)="ShowList()">Offline Service<ion-icon name="md-navigate"></ion-icon></button></div>
+  <div id="map"></div>  
+ 
+  <button full (click)="ShowList()">Near By Service<ion-icon name="md-navigate"></ion-icon></button>
+</ion-card> 
+  <ion-list style="transition: transform .5s ease 0s;transform: translateX(-100%);" id="ServiceListId" [ngClass]="{'slide-in': isClassVisible }">
+
+    <ion-item *ngFor="let ServiceCenter of ServiceCenterList">
+      <ion-thumbnail item-left (click)="ShowInMap(ServiceCenter.lat,ServiceCenter.lng,ServiceCenter.name)">
+        <img src="img/{{ServiceCenter.img}}">
+      </ion-thumbnail>
+      <h2>{{ServiceCenter.name}}</h2>
+      <p>{{ServiceCenter.loc}} •  {{ServiceCenter.rating}} <ion-icon name="ios-star-half"></ion-icon></p>
+      <button clear item-right (click)="gotoServiceCenter(ServiceCenter.name)">View</button>
+    </ion-item>
+   </ion-list>
+</ion-content>
+<style>
+.slide-in{
+transform: translateX(0%) !important;
+}
+.scroll {
+    height: 50%;
+}
+ 
+#map {
+    width: 100%;
+    height: 88%;
+}
+.displayLoading{
+height:0% !important;
+}
+</style>
