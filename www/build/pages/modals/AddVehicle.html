@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      ENTER VEHICLE DETAILS	
+    </ion-title>
+    <ion-buttons start>
+      <button (click)="dismiss()">
+        <span primary showWhen="ios">Cancel</span>
+        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Vehicle Name</ion-label>
+      <ion-input type="text" [(ngModel)]="newVehicleName"></ion-input>
+    </ion-item>
+   <ion-item>
+      <ion-label fixed>Vehicle Type</ion-label>
+      <ion-input type="text" [(ngModel)]="newVehicleType"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Registration Details</ion-label>
+      <ion-input type="text" [(ngModel)]="newVehicleRegDet"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Model</ion-label>
+      <ion-input type="text" [(ngModel)]="newVehicleModel"></ion-input>
+    </ion-item>
+    
+  </ion-list>
+
+  <div padding>
+    <button primary block (click)="Enter()">Add</button>
+  </div>
+
+
+</ion-content>

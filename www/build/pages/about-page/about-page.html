@@ -1,0 +1,23 @@
+
+<ion-navbar *navbar>
+  <ion-title>
+    SERVICE DETAILS
+  </ion-title>
+</ion-navbar>
+<ion-content no-padding>
+        <h4>&nbsp;&nbsp;&nbsp;LIST OF SERVICES</h4>
+        <ion-card *ngFor="let service of ServiceList" no-padding>
+         <ion-item-divider light>{{service.vehicle}}</ion-item-divider>
+	    <ion-card-header>
+	      Serviced at {{service.center}} on {{service.date}}
+	    </ion-card-header>
+	    <ion-card-content>
+	      <ion-grid>
+		<ion-row>
+		  <ion-col width-75>Service is done for {{service.serviceFor}}</ion-col>
+		  <ion-col width-25>{{service.cost}}</ion-col>
+		</ion-row>
+	      </ion-grid>
+	    </ion-card-content>
+        </ion-card>
+</ion-content>
